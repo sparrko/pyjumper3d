@@ -35,9 +35,7 @@ class Planes(object):
                 pXw = (vars.WINDOW_WIDTH / 2) + (((p.x + vars.PLANE_WIDTH) - cam.pos.x) / fabs(p.z - cam.pos.z) * vars.WINDOW_HEIGHT) - pX
                 pYw = (vars.WINDOW_HEIGHT / 2) + (((p.y + vars.PLANE_WIDTH) - cam.pos.y) / fabs(p.z - cam.pos.z) * vars.WINDOW_HEIGHT) - pY
 
-                color = [distForColor, distForColor, distForColor]
-
-                pygame.draw.rect(surface, color, (pX, pY, pXw, pYw))
+                pygame.draw.rect(surface, (distForColor, distForColor, distForColor), (pX, pY, pXw, pYw))
             else:
                 if p.z > cam.pos.z + vars.GAMEZONE_WIDTH:
                     self.list.pop(index)
