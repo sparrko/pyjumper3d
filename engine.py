@@ -4,6 +4,8 @@ from planes import Planes
 import cam
 import pygame
 import vars
+from time import sleep
+from math import fabs
 
 class Engine():
     def __init__(self):
@@ -85,3 +87,4 @@ class Engine():
                 self.updateEvent()
                 self.updateLogic()
                 self.display()
+            elif vars.CPU_LOW_USAGE: sleep(fabs(((1000.0 / vars.FPS_LIMIT) - self.timer.getMilliseconds()) * 0.6 / 1000))
